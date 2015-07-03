@@ -6,7 +6,7 @@ import (
 )
 
 type CompositeEntry struct {
-	entries []Entry
+	Entries []Entry
 }
 
 func newCompositeEntry(pathList string) *CompositeEntry {
@@ -21,11 +21,11 @@ func newCompositeEntry(pathList string) *CompositeEntry {
 }
 
 func (self *CompositeEntry) addEntry(entry Entry) {
-	self.entries = append(self.entries, entry)
+	self.Entries = append(self.Entries, entry)
 }
 
 func (self *CompositeEntry) readClass(className string) (Entry, []byte, error) {
-	for _, entry := range self.entries {
+	for _, entry := range self.Entries {
 		entry, data, err := entry.readClass(className)
 		if err == nil {
 			return entry, data, nil
@@ -36,9 +36,9 @@ func (self *CompositeEntry) readClass(className string) (Entry, []byte, error) {
 }
 
 func (self *CompositeEntry) String() string {
-	strs := make([]string, len(self.entries))
+	strs := make([]string, len(self.Entries))
 
-	for i, entry := range self.entries {
+	for i, entry := range self.Entries {
 		strs[i] = entry.String()
 	}
 

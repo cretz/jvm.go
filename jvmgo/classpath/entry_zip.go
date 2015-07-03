@@ -8,7 +8,7 @@ import (
 )
 
 type ZipEntry struct {
-	absZip string
+	AbsZip string
 	zipRC  *zip.ReadCloser
 }
 
@@ -40,7 +40,7 @@ func (self *ZipEntry) readClass(className string) (Entry, []byte, error) {
 
 // todo: close zip
 func (self *ZipEntry) openJar() error {
-	r, err := zip.OpenReader(self.absZip) // func OpenReader(name string) (*ReadCloser, error)
+	r, err := zip.OpenReader(self.AbsZip) // func OpenReader(name string) (*ReadCloser, error)
 	if err == nil {
 		self.zipRC = r
 	}
@@ -71,5 +71,5 @@ func readClass(classFile *zip.File) ([]byte, error) {
 }
 
 func (self *ZipEntry) String() string {
-	return self.absZip
+	return self.AbsZip
 }

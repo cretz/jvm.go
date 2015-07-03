@@ -42,7 +42,7 @@ func (self *ClassPath) ReadClass(className string) (Entry, []byte, error) {
 }
 
 func (self *ClassPath) String() string {
-	userClassPath := self.CompositeEntry.entries[2]
+	userClassPath := self.CompositeEntry.Entries[2]
 	return userClassPath.String()
 }
 
