@@ -3,10 +3,10 @@ package lang
 import (
 	"strings"
 
-	. "github.com/zxh0/jvm.go/jvmgo/any"
-	cp "github.com/zxh0/jvm.go/jvmgo/classpath"
-	"github.com/zxh0/jvm.go/jvmgo/jvm/rtda"
-	rtc "github.com/zxh0/jvm.go/jvmgo/jvm/rtda/class"
+	. "github.com/cretz/jvm.go/jvmgo/any"
+	cp "github.com/cretz/jvm.go/jvmgo/classpath"
+	"github.com/cretz/jvm.go/jvmgo/jvm/rtda"
+	rtc "github.com/cretz/jvm.go/jvmgo/jvm/rtda/class"
 )
 
 func init() {

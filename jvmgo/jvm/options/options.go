@@ -4,7 +4,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/zxh0/jvm.go/jvmgo/cmdline"
+	"github.com/cretz/jvm.go/jvmgo/cmdline"
 )
 
 var (

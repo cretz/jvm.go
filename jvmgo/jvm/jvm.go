@@ -4,16 +4,16 @@ import (
 	"os"
 	"runtime/pprof"
 
-	. "github.com/zxh0/jvm.go/jvmgo/any"
-	"github.com/zxh0/jvm.go/jvmgo/classpath"
-	"github.com/zxh0/jvm.go/jvmgo/cmdline"
-	"github.com/zxh0/jvm.go/jvmgo/jutil"
-	"github.com/zxh0/jvm.go/jvmgo/jvm/interpreter"
-	"github.com/zxh0/jvm.go/jvmgo/jvm/keepalive"
-	"github.com/zxh0/jvm.go/jvmgo/jvm/options"
-	"github.com/zxh0/jvm.go/jvmgo/jvm/rtda"
-	rtc "github.com/zxh0/jvm.go/jvmgo/jvm/rtda/class"
-	_ "github.com/zxh0/jvm.go/jvmgo/native"
+	. "github.com/cretz/jvm.go/jvmgo/any"
+	"github.com/cretz/jvm.go/jvmgo/classpath"
+	"github.com/cretz/jvm.go/jvmgo/cmdline"
+	"github.com/cretz/jvm.go/jvmgo/jutil"
+	"github.com/cretz/jvm.go/jvmgo/jvm/interpreter"
+	"github.com/cretz/jvm.go/jvmgo/jvm/keepalive"
+	"github.com/cretz/jvm.go/jvmgo/jvm/options"
+	"github.com/cretz/jvm.go/jvmgo/jvm/rtda"
+	rtc "github.com/cretz/jvm.go/jvmgo/jvm/rtda/class"
+	_ "github.com/cretz/jvm.go/jvmgo/native"
 )
 
 func Startup(cmd *cmdline.Command) {

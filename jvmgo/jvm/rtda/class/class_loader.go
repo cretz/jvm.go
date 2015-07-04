@@ -3,12 +3,12 @@ package class
 import (
 	"fmt"
 
-	. "github.com/zxh0/jvm.go/jvmgo/any"
-	"github.com/zxh0/jvm.go/jvmgo/classfile"
-	"github.com/zxh0/jvm.go/jvmgo/classpath"
-	"github.com/zxh0/jvm.go/jvmgo/jvm/jerrors"
-	"github.com/zxh0/jvm.go/jvmgo/jvm/jtype"
-	"github.com/zxh0/jvm.go/jvmgo/jvm/options"
+	. "github.com/cretz/jvm.go/jvmgo/any"
+	"github.com/cretz/jvm.go/jvmgo/classfile"
+	"github.com/cretz/jvm.go/jvmgo/classpath"
+	"github.com/cretz/jvm.go/jvmgo/jvm/jerrors"
+	"github.com/cretz/jvm.go/jvmgo/jvm/jtype"
+	"github.com/cretz/jvm.go/jvmgo/jvm/options"
 )
 
 const (
@@ -42,6 +42,15 @@ class names:
 type ClassLoader struct {
 	classPath *classpath.ClassPath
 	classMap  map[string]*Class
+}
+
+func NewClassLoader(cp *classpath.ClassPath) *ClassLoader {
+	cl := &ClassLoader{
+		classPath: cp,
+		classMap: map[string]*Class{},
+	}
+	cl._init()
+	return cl
 }
 
 func BootLoader() *ClassLoader {

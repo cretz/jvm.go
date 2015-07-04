@@ -1,7 +1,7 @@
 package class
 
 import (
-	. "github.com/zxh0/jvm.go/jvmgo/any"
+	. "github.com/cretz/jvm.go/jvmgo/any"
 )
 
 func (self *Obj) Clone() *Obj {

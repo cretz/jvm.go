@@ -5,10 +5,10 @@ import (
 	"time"
 	"unsafe"
 
-	. "github.com/zxh0/jvm.go/jvmgo/any"
-	"github.com/zxh0/jvm.go/jvmgo/jvm/options"
-	"github.com/zxh0/jvm.go/jvmgo/jvm/rtda"
-	rtc "github.com/zxh0/jvm.go/jvmgo/jvm/rtda/class"
+	. "github.com/cretz/jvm.go/jvmgo/any"
+	"github.com/cretz/jvm.go/jvmgo/jvm/options"
+	"github.com/cretz/jvm.go/jvmgo/jvm/rtda"
+	rtc "github.com/cretz/jvm.go/jvmgo/jvm/rtda/class"
 )
 
 func init() {
@@ -112,7 +112,7 @@ func _sysProps() map[string]string {
 	return map[string]string{
 		"java.version":         "1.8.0",
 		"java.vendor":          "jvm.go",
-		"java.vendor.url":      "https://github.com/zxh0/jvm.go",
+		"java.vendor.url":      "https://github.com/cretz/jvm.go",
 		"java.home":            options.AbsJavaHome,
 		"java.class.version":   "52.0",
 		"java.class.path":      rtc.BootLoader().ClassPath().String(),

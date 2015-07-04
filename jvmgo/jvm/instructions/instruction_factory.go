@@ -1,7 +1,7 @@
 package instructions
 
 import (
-	"github.com/zxh0/jvm.go/jvmgo/jutil"
+	"github.com/cretz/jvm.go/jvmgo/jutil"
 )
 
 // NoOperandsInstruction singletons
@@ -38,7 +38,7 @@ var (
 	_dload_1       = &dload_1{}
 	_dload_2       = &dload_2{}
 	_dload_3       = &dload_3{}
-	_aload_0       = &aload_0{}
+	_aload_0       = &Aload0{}
 	_aload_1       = &aload_1{}
 	_aload_2       = &aload_2{}
 	_aload_3       = &aload_3{}

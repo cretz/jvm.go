@@ -1,7 +1,7 @@
 package misc
 
 import (
-	"github.com/zxh0/jvm.go/jvmgo/jutil"
+	"github.com/cretz/jvm.go/jvmgo/jutil"
 )
 
 var _allocated = map[int64][]byte{}

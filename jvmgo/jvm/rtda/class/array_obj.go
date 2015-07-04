@@ -1,7 +1,7 @@
 package class
 
 import (
-	"github.com/zxh0/jvm.go/jvmgo/jutil"
+	"github.com/cretz/jvm.go/jvmgo/jutil"
 )
 
 func (self *Obj) IsArray() bool {

@@ -4,7 +4,7 @@ import (
 	"sync/atomic"
 	"unsafe"
 
-	. "github.com/zxh0/jvm.go/jvmgo/any"
+	. "github.com/cretz/jvm.go/jvmgo/any"
 )
 
 // copied from go/src/sync/atomic/value.go

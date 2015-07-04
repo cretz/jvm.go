@@ -3,8 +3,8 @@ package class
 import (
 	"sync"
 
-	. "github.com/zxh0/jvm.go/jvmgo/any"
-	cp "github.com/zxh0/jvm.go/jvmgo/classpath"
+	. "github.com/cretz/jvm.go/jvmgo/any"
+	cp "github.com/cretz/jvm.go/jvmgo/classpath"
 )
 
 // initialization state

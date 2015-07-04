@@ -3,7 +3,7 @@ package class
 import (
 	"sync"
 
-	. "github.com/zxh0/jvm.go/jvmgo/any"
+	. "github.com/cretz/jvm.go/jvmgo/any"
 )
 
 type Monitor struct {

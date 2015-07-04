@@ -4,10 +4,10 @@ import (
 	"sync/atomic"
 	"unsafe"
 
-	. "github.com/zxh0/jvm.go/jvmgo/any"
-	"github.com/zxh0/jvm.go/jvmgo/jutil"
-	"github.com/zxh0/jvm.go/jvmgo/jvm/rtda"
-	rtc "github.com/zxh0/jvm.go/jvmgo/jvm/rtda/class"
+	. "github.com/cretz/jvm.go/jvmgo/any"
+	"github.com/cretz/jvm.go/jvmgo/jutil"
+	"github.com/cretz/jvm.go/jvmgo/jvm/rtda"
+	rtc "github.com/cretz/jvm.go/jvmgo/jvm/rtda/class"
 )
 
 func init() {

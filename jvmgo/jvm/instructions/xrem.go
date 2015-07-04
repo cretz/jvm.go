@@ -3,7 +3,7 @@ package instructions
 import (
 	"math"
 
-	"github.com/zxh0/jvm.go/jvmgo/jvm/rtda"
+	"github.com/cretz/jvm.go/jvmgo/jvm/rtda"
 )
 
 // Remainder double

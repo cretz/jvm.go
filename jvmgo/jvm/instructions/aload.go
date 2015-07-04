@@ -1,7 +1,7 @@
 package instructions
 
 import (
-	"github.com/zxh0/jvm.go/jvmgo/jvm/rtda"
+	"github.com/cretz/jvm.go/jvmgo/jvm/rtda"
 )
 
 // Load reference from local variable
@@ -11,9 +11,9 @@ func (self *aload) Execute(frame *rtda.Frame) {
 	_aload(frame, uint(self.index))
 }
 
-type aload_0 struct{ NoOperandsInstruction }
+type Aload0 struct{ NoOperandsInstruction }
 
-func (self *aload_0) Execute(frame *rtda.Frame) {
+func (self *Aload0) Execute(frame *rtda.Frame) {
 	_aload(frame, 0)
 }
 

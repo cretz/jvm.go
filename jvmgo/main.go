@@ -3,8 +3,8 @@ package main
 import (
 	"os"
 
-	"github.com/zxh0/jvm.go/jvmgo/cmdline"
-	"github.com/zxh0/jvm.go/jvmgo/jvm"
+	"github.com/cretz/jvm.go/jvmgo/cmdline"
+	"github.com/cretz/jvm.go/jvmgo/jvm"
 )
 
 func main() {

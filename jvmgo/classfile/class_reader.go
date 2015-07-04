@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"unicode/utf16"
 
-	"github.com/zxh0/jvm.go/jvmgo/jutil/bigendian"
+	"github.com/cretz/jvm.go/jvmgo/jutil/bigendian"
 )
 
 type ClassReader struct {

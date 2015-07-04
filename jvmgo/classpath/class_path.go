@@ -4,7 +4,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/zxh0/jvm.go/jvmgo/jvm/options"
+	"github.com/cretz/jvm.go/jvmgo/jvm/options"
 )
 
 type ClassPath struct {
@@ -14,6 +14,12 @@ type ClassPath struct {
 func Parse(cpOption string) *ClassPath {
 	cp := &ClassPath{}
 	cp.parseBootAndExtClassPath()
+	cp.parseUserClassPath(cpOption)
+	return cp
+}
+
+func ParseWithoutJre(cpOption string) *ClassPath {
+	cp := &ClassPath{}
 	cp.parseUserClassPath(cpOption)
 	return cp
 }

@@ -1,9 +1,9 @@
 package reflect
 
 import (
-	. "github.com/zxh0/jvm.go/jvmgo/any"
-	rtc "github.com/zxh0/jvm.go/jvmgo/jvm/rtda/class"
-	"github.com/zxh0/jvm.go/jvmgo/native/box"
+	. "github.com/cretz/jvm.go/jvmgo/any"
+	rtc "github.com/cretz/jvm.go/jvmgo/jvm/rtda/class"
+	"github.com/cretz/jvm.go/jvmgo/native/box"
 )
 
 func getGoMethod(methodObj *rtc.Obj) *rtc.Method {

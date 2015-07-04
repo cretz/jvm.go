@@ -3,7 +3,7 @@ package class
 import (
 	"sync"
 
-	"github.com/zxh0/jvm.go/jvmgo/classfile"
+	"github.com/cretz/jvm.go/jvmgo/classfile"
 )
 
 func newClass(cf *classfile.ClassFile) *Class {

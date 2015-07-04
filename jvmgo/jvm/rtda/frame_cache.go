@@ -1,7 +1,7 @@
 package rtda
 
 import (
-	rtc "github.com/zxh0/jvm.go/jvmgo/jvm/rtda/class"
+	rtc "github.com/cretz/jvm.go/jvmgo/jvm/rtda/class"
 )
 
 type FrameCache struct {

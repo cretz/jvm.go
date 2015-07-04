@@ -3,10 +3,10 @@ package interpreter
 import (
 	"fmt"
 
-	"github.com/zxh0/jvm.go/jvmgo/jvm/instructions"
-	"github.com/zxh0/jvm.go/jvmgo/jvm/jerrors"
-	"github.com/zxh0/jvm.go/jvmgo/jvm/keepalive"
-	"github.com/zxh0/jvm.go/jvmgo/jvm/rtda"
+	"github.com/cretz/jvm.go/jvmgo/jvm/instructions"
+	"github.com/cretz/jvm.go/jvmgo/jvm/jerrors"
+	"github.com/cretz/jvm.go/jvmgo/jvm/keepalive"
+	"github.com/cretz/jvm.go/jvmgo/jvm/rtda"
 )
 
 // todo

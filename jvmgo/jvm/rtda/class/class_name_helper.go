@@ -1,8 +1,8 @@
 package class
 
 import (
-	"github.com/zxh0/jvm.go/jvmgo/jutil"
-	"github.com/zxh0/jvm.go/jvmgo/jvm/jtype"
+	"github.com/cretz/jvm.go/jvmgo/jutil"
+	"github.com/cretz/jvm.go/jvmgo/jvm/jtype"
 )
 
 func DotToSlash(name string) string {

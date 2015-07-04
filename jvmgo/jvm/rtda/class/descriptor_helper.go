@@ -3,7 +3,7 @@ package class
 import (
 	"strings"
 
-	"github.com/zxh0/jvm.go/jvmgo/jvm/jtype"
+	"github.com/cretz/jvm.go/jvmgo/jvm/jtype"
 )
 
 func GetReturnDescriptor(methodDescriptor string) string {
