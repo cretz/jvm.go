@@ -24,7 +24,7 @@ func newFrame(thread *Thread, method *rtc.Method) *Frame {
 		maxLocals:    method.MaxLocals(),
 		maxStack:     method.MaxStack(),
 		localVars:    newLocalVars(method.MaxLocals()),
-		operandStack: newOperandStack(method.MaxStack()),
+		operandStack: NewOperandStack(method.MaxStack()),
 	}
 }
 

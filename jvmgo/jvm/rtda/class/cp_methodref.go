@@ -29,7 +29,7 @@ func (self *ConstantMethodref) StaticMethod() *Method {
 	return self.method
 }
 func (self *ConstantMethodref) resolveStaticMethod() {
-	method := self.findMethod(true)
+	method := self.FindMethod(true)
 	if method != nil {
 		self.method = method
 	} else {
@@ -45,7 +45,7 @@ func (self *ConstantMethodref) SpecialMethod() *Method {
 	return self.method
 }
 func (self *ConstantMethodref) resolveSpecialMethod() {
-	method := self.findMethod(false)
+	method := self.FindMethod(false)
 	if method != nil {
 		self.method = method
 		return
@@ -65,7 +65,7 @@ func (self *ConstantMethodref) resolveSpecialMethod() {
 	panic("special method not found!")
 }
 
-func (self *ConstantMethodref) findMethod(isStatic bool) *Method {
+func (self *ConstantMethodref) FindMethod(isStatic bool) *Method {
 	class := bootLoader.LoadClass(self.className)
 	return class.getMethod(self.name, self.descriptor, isStatic)
 }

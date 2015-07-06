@@ -6,15 +6,15 @@ import (
 )
 
 // Get static field from class
-type getstatic struct {
+type Getstatic struct {
 	Index16Instruction
 	field *rtc.Field
 }
 
-func (self *getstatic) Execute(frame *rtda.Frame) {
+func (self *Getstatic) Execute(frame *rtda.Frame) {
 	if self.field == nil {
 		cp := frame.Method().Class().ConstantPool()
-		kFieldRef := cp.GetConstant(self.index).(*rtc.ConstantFieldref)
+		kFieldRef := cp.GetConstant(self.Index).(*rtc.ConstantFieldref)
 		self.field = kFieldRef.StaticField()
 	}
 

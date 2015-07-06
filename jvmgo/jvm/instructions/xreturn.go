@@ -5,9 +5,9 @@ import (
 )
 
 // Return void from method
-type return_ struct{ NoOperandsInstruction }
+type Return struct{ NoOperandsInstruction }
 
-func (self *return_) Execute(frame *rtda.Frame) {
+func (self *Return) Execute(frame *rtda.Frame) {
 	thread := frame.Thread()
 	thread.PopFrame()
 }

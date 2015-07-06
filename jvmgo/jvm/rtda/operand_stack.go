@@ -10,7 +10,7 @@ type OperandStack struct {
 	slots []Any
 }
 
-func newOperandStack(size uint) *OperandStack {
+func NewOperandStack(size uint) *OperandStack {
 	if size > 0 {
 		slots := make([]Any, size)
 		return &OperandStack{0, slots}

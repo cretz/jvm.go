@@ -21,25 +21,25 @@ const (
 )
 
 // Invoke dynamic method
-type invokedynamic struct {
+type Invokedynamic struct {
 	index uint16
 	// 0
 	// 0
 }
 
-func (self *invokedynamic) fetchOperands(decoder *InstructionDecoder) {
+func (self *Invokedynamic) fetchOperands(decoder *InstructionDecoder) {
 	self.index = decoder.readUint16()
 	decoder.readUint8() // must be 0
 	decoder.readUint8() // must be 0
 }
 
-func (self *invokedynamic) Execute(frame *rtda.Frame) {
+func (self *Invokedynamic) Execute(frame *rtda.Frame) {
 	self.resolveCallSiteSpecifier(frame)
 	// todo
 	panic("todo invokedynamic")
 }
 
-func (self *invokedynamic) resolveCallSiteSpecifier(frame *rtda.Frame) {
+func (self *Invokedynamic) resolveCallSiteSpecifier(frame *rtda.Frame) {
 	cp := frame.Method().Class().ConstantPool()
 	kIndy := cp.GetConstant(uint(self.index)).(*rtc.ConstantInvokeDynamic)
 	//bmSpec := kIndy.BootstrapMethodSpecifier()
@@ -49,4 +49,8 @@ func (self *invokedynamic) resolveCallSiteSpecifier(frame *rtda.Frame) {
 	// todo
 	fmt.Printf("kIndy: %v\n", kIndy)
 	kIndy.MethodHandle()
+}
+
+func (self *Invokedynamic) ByteSize() int {
+	return 5
 }

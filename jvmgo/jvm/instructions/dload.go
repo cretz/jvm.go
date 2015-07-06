@@ -8,7 +8,7 @@ import (
 type dload struct{ Index8Instruction }
 
 func (self *dload) Execute(frame *rtda.Frame) {
-	_dload(frame, uint(self.index))
+	_dload(frame, uint(self.Index))
 }
 
 type dload_0 struct{ NoOperandsInstruction }

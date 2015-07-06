@@ -7,14 +7,14 @@ import (
 )
 
 // Create new array
-type newarray struct {
+type Newarray struct {
 	atype uint8
 }
 
-func (self *newarray) fetchOperands(decoder *InstructionDecoder) {
+func (self *Newarray) fetchOperands(decoder *InstructionDecoder) {
 	self.atype = decoder.readUint8()
 }
-func (self *newarray) Execute(frame *rtda.Frame) {
+func (self *Newarray) Execute(frame *rtda.Frame) {
 	stack := frame.OperandStack()
 	count := stack.PopInt()
 	if count < 0 {
@@ -26,12 +26,16 @@ func (self *newarray) Execute(frame *rtda.Frame) {
 	stack.PushRef(arr)
 }
 
+func (self *Newarray) ByteSize() int {
+	return 2
+}
+
 // Create new array of reference
 type anewarray struct{ Index16Instruction }
 
 func (self *anewarray) Execute(frame *rtda.Frame) {
 	cp := frame.ConstantPool()
-	kClass := cp.GetConstant(self.index).(*rtc.ConstantClass)
+	kClass := cp.GetConstant(self.Index).(*rtc.ConstantClass)
 	componentClass := kClass.Class()
 
 	if componentClass.InitializationNotStarted() {
@@ -53,16 +57,16 @@ func (self *anewarray) Execute(frame *rtda.Frame) {
 }
 
 // Create new multidimensional array
-type multianewarray struct {
+type Multianewarray struct {
 	index      uint16
 	dimensions uint8
 }
 
-func (self *multianewarray) fetchOperands(decoder *InstructionDecoder) {
+func (self *Multianewarray) fetchOperands(decoder *InstructionDecoder) {
 	self.index = decoder.readUint16()
 	self.dimensions = decoder.readUint8()
 }
-func (self *multianewarray) Execute(frame *rtda.Frame) {
+func (self *Multianewarray) Execute(frame *rtda.Frame) {
 	cp := frame.ConstantPool()
 	kClass := cp.GetConstant(uint(self.index)).(*rtc.ConstantClass)
 	arrClass := kClass.Class()
@@ -75,6 +79,10 @@ func (self *multianewarray) Execute(frame *rtda.Frame) {
 		arr := _newMultiArray(counts, arrClass)
 		stack.PushRef(arr)
 	}
+}
+
+func (self *Multianewarray) ByteSize() int {
+	return 4
 }
 
 func _checkCounts(counts []Any) bool {

@@ -8,7 +8,7 @@ import (
 type fstore struct{ Index8Instruction }
 
 func (self *fstore) Execute(frame *rtda.Frame) {
-	_fstore(frame, uint(self.index))
+	_fstore(frame, uint(self.Index))
 }
 
 type fstore_0 struct{ NoOperandsInstruction }

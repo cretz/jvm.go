@@ -50,9 +50,9 @@ func (self *iconst_m1) Execute(frame *rtda.Frame) {
 	frame.OperandStack().PushInt(-1)
 }
 
-type iconst_0 struct{ NoOperandsInstruction }
+type Iconst0 struct{ NoOperandsInstruction }
 
-func (self *iconst_0) Execute(frame *rtda.Frame) {
+func (self *Iconst0) Execute(frame *rtda.Frame) {
 	frame.OperandStack().PushInt(0)
 }
 

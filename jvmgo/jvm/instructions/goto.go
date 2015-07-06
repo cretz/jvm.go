@@ -5,20 +5,24 @@ import (
 )
 
 // Branch always
-type goto_ struct{ BranchInstruction }
+type Goto struct{ BranchInstruction }
 
-func (self *goto_) Execute(frame *rtda.Frame) {
-	branch(frame, self.offset)
+func (self *Goto) Execute(frame *rtda.Frame) {
+	branch(frame, self.Offset)
 }
 
 // Branch always (wide index)
-type goto_w struct {
+type GotoW struct {
 	offset int
 }
 
-func (self *goto_w) fetchOperands(decoder *InstructionDecoder) {
+func (self *GotoW) fetchOperands(decoder *InstructionDecoder) {
 	self.offset = int(decoder.readInt32())
 }
-func (self *goto_w) Execute(frame *rtda.Frame) {
+func (self *GotoW) Execute(frame *rtda.Frame) {
 	branch(frame, self.offset)
+}
+
+func (self *GotoW) ByteSize() int {
+	return 5
 }

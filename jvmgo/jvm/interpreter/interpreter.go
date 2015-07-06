@@ -61,7 +61,7 @@ func _loop(thread *rtda.Thread) {
 		// fetch instruction
 		method := frame.Method()
 		if method.Instructions == nil {
-			method.Instructions = decodeMethod(method.Code())
+			method.Instructions = DecodeMethod(method.Code())
 		}
 		insts := method.Instructions.([]instructions.Instruction)
 		inst := insts[pc]

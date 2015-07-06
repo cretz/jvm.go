@@ -9,7 +9,7 @@ type if_acmpeq struct{ BranchInstruction }
 
 func (self *if_acmpeq) Execute(frame *rtda.Frame) {
 	if _acmp(frame) {
-		branch(frame, self.offset)
+		branch(frame, self.Offset)
 	}
 }
 
@@ -17,7 +17,7 @@ type if_acmpne struct{ BranchInstruction }
 
 func (self *if_acmpne) Execute(frame *rtda.Frame) {
 	if !_acmp(frame) {
-		branch(frame, self.offset)
+		branch(frame, self.Offset)
 	}
 }
 

@@ -8,12 +8,12 @@ import (
 type istore struct{ Index8Instruction }
 
 func (self *istore) Execute(frame *rtda.Frame) {
-	_istore(frame, uint(self.index))
+	_istore(frame, uint(self.Index))
 }
 
-type istore_0 struct{ NoOperandsInstruction }
+type Istore0 struct{ NoOperandsInstruction }
 
-func (self *istore_0) Execute(frame *rtda.Frame) {
+func (self *Istore0) Execute(frame *rtda.Frame) {
 	_istore(frame, 0)
 }
 

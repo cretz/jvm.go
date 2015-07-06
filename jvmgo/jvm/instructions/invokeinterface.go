@@ -6,7 +6,7 @@ import (
 )
 
 // Invoke interface method
-type invokeinterface struct {
+type Invokeinterface struct {
 	index uint
 	// count uint8
 	// zero uint8
@@ -16,13 +16,13 @@ type invokeinterface struct {
 	argSlotCount uint
 }
 
-func (self *invokeinterface) fetchOperands(decoder *InstructionDecoder) {
+func (self *Invokeinterface) fetchOperands(decoder *InstructionDecoder) {
 	self.index = uint(decoder.readUint16())
 	decoder.readUint8() // count
 	decoder.readUint8() // must be 0
 }
 
-func (self *invokeinterface) Execute(frame *rtda.Frame) {
+func (self *Invokeinterface) Execute(frame *rtda.Frame) {
 	if self.kMethodRef == nil {
 		cp := frame.Method().ConstantPool()
 		self.kMethodRef = cp.GetConstant(self.index).(*rtc.ConstantInterfaceMethodref)
@@ -37,4 +37,8 @@ func (self *invokeinterface) Execute(frame *rtda.Frame) {
 
 	method := self.kMethodRef.FindInterfaceMethod(ref)
 	frame.Thread().InvokeMethod(method)
+}
+
+func (self *Invokeinterface) ByteSize() int {
+	return 5
 }

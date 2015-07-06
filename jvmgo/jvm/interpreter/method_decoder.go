@@ -6,7 +6,7 @@ import (
 
 var decoder = instructions.NewDecoder()
 
-func decodeMethod(code []byte) []instructions.Instruction {
+func DecodeMethod(code []byte) []instructions.Instruction {
 	insts := make([]instructions.Instruction, len(code))
 
 	pc := 0

@@ -18,7 +18,7 @@ func newNativeFrame(thread *Thread, method *rtc.Method) *Frame {
 	frame.thread = thread
 	frame.method = method
 	frame.localVars = newLocalVars(method.ArgSlotCount()) // todo
-	frame.operandStack = newOperandStack(4)               // todo
+	frame.operandStack = NewOperandStack(4)               // todo
 
 	code := method.Code()
 	if code == nil {

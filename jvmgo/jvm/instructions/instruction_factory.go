@@ -9,7 +9,7 @@ var (
 	_nop           = &nop{}
 	_aconst_null   = &aconst_null{}
 	_iconst_m1     = &iconst_m1{}
-	_iconst_0      = &iconst_0{}
+	_iconst_0      = &Iconst0{}
 	_iconst_1      = &iconst_1{}
 	_iconst_2      = &iconst_2{}
 	_iconst_3      = &iconst_3{}
@@ -22,11 +22,11 @@ var (
 	_fconst_2      = &fconst_2{}
 	_dconst_0      = &dconst_0{}
 	_dconst_1      = &dconst_1{}
-	_iload_0       = &iload_0{}
+	_iload_0       = &Iload0{}
 	_iload_1       = &iload_1{}
 	_iload_2       = &iload_2{}
 	_iload_3       = &iload_3{}
-	_lload_0       = &lload_0{}
+	_lload_0       = &Lload0{}
 	_lload_1       = &lload_1{}
 	_lload_2       = &lload_2{}
 	_lload_3       = &lload_3{}
@@ -50,7 +50,7 @@ var (
 	_baload        = &baload{}
 	_caload        = &caload{}
 	_saload        = &saload{}
-	_istore_0      = &istore_0{}
+	_istore_0      = &Istore0{}
 	_istore_1      = &istore_1{}
 	_istore_2      = &istore_2{}
 	_istore_3      = &istore_3{}
@@ -148,7 +148,7 @@ var (
 	_freturn       = &freturn{}
 	_dreturn       = &dreturn{}
 	_areturn       = &areturn{}
-	_return_       = &return_{}
+	_return_       = &Return{}
 	_arraylength   = &arraylength{}
 	_athrow        = &athrow{}
 	_monitorenter  = &monitorenter{}
@@ -191,11 +191,11 @@ func newInstruction(opcode byte) Instruction {
 	case 0x0f:
 		return _dconst_1
 	case 0x10:
-		return &bipush{}
+		return &Bipush{}
 	case 0x11:
-		return &sipush{}
+		return &Sipush{}
 	case 0x12:
-		return &ldc{}
+		return &Ldc{}
 	case 0x13:
 		return &ldc_w{}
 	case 0x14:
@@ -423,7 +423,7 @@ func newInstruction(opcode byte) Instruction {
 	case 0x83:
 		return _lxor
 	case 0x84:
-		return &iinc{}
+		return &Iinc{}
 	case 0x85:
 		return _i2l
 	case 0x86:
@@ -483,7 +483,7 @@ func newInstruction(opcode byte) Instruction {
 	case 0xa1:
 		return &if_icmplt{}
 	case 0xa2:
-		return &if_icmpge{}
+		return &IfIcmpge{}
 	case 0xa3:
 		return &if_icmpgt{}
 	case 0xa4:
@@ -493,15 +493,15 @@ func newInstruction(opcode byte) Instruction {
 	case 0xa6:
 		return &if_acmpne{}
 	case 0xa7:
-		return &goto_{}
+		return &Goto{}
 	case 0xa8:
 		return &jsr{}
 	case 0xa9:
 		return &ret{}
 	case 0xaa:
-		return &tableswitch{}
+		return &Tableswitch{}
 	case 0xab:
-		return &lookupswitch{}
+		return &Lookupswitch{}
 	case 0xac:
 		return _ireturn
 	case 0xad:
@@ -515,7 +515,7 @@ func newInstruction(opcode byte) Instruction {
 	case 0xb1:
 		return _return_
 	case 0xb2:
-		return &getstatic{}
+		return &Getstatic{}
 	case 0xb3:
 		return &putstatic{}
 	case 0xb4:
@@ -523,19 +523,19 @@ func newInstruction(opcode byte) Instruction {
 	case 0xb5:
 		return &putfield{}
 	case 0xb6:
-		return &invokevirtual{}
+		return &Invokevirtual{}
 	case 0xb7:
 		return &invokespecial{}
 	case 0xb8:
-		return &invokestatic{}
+		return &Invokestatic{}
 	case 0xb9:
-		return &invokeinterface{}
+		return &Invokeinterface{}
 	case 0xba:
-		return &invokedynamic{}
+		return &Invokedynamic{}
 	case 0xbb:
 		return &new_{}
 	case 0xbc:
-		return &newarray{}
+		return &Newarray{}
 	case 0xbd:
 		return &anewarray{}
 	case 0xbe:
@@ -551,15 +551,15 @@ func newInstruction(opcode byte) Instruction {
 	case 0xc3:
 		return _monitorexit
 	case 0xc4:
-		return &wide{}
+		return &Wide{}
 	case 0xc5:
-		return &multianewarray{}
+		return &Multianewarray{}
 	case 0xc6:
 		return &ifnull{}
 	case 0xc7:
 		return &ifnonnull{}
 	case 0xc8:
-		return &goto_w{}
+		return &GotoW{}
 	case 0xc9:
 		return &jsr_w{}
 	//case 0xca: todo breakpoint

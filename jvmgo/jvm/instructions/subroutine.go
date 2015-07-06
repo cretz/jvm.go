@@ -23,6 +23,10 @@ func (self *jsr_w) Execute(frame *rtda.Frame) {
 	panic("todo")
 }
 
+func (self *jsr_w) ByteSize() int {
+	return 5
+}
+
 // Return from subroutine
 type ret struct{ Index8Instruction }
 

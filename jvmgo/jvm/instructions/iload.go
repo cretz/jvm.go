@@ -8,12 +8,12 @@ import (
 type iload struct{ Index8Instruction }
 
 func (self *iload) Execute(frame *rtda.Frame) {
-	_iload(frame, uint(self.index))
+	_iload(frame, uint(self.Index))
 }
 
-type iload_0 struct{ NoOperandsInstruction }
+type Iload0 struct{ NoOperandsInstruction }
 
-func (self *iload_0) Execute(frame *rtda.Frame) {
+func (self *Iload0) Execute(frame *rtda.Frame) {
 	_iload(frame, 0)
 }
 

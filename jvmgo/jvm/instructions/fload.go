@@ -8,7 +8,7 @@ import (
 type fload struct{ Index8Instruction }
 
 func (self *fload) Execute(frame *rtda.Frame) {
-	_fload(frame, uint(self.index))
+	_fload(frame, uint(self.Index))
 }
 
 type fload_0 struct{ NoOperandsInstruction }
